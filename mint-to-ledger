@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+# Adapted from https://github.com/shiinee/mint-to-ledger
 # Reads a transactions .csv file exported from Mint.com and writes it out as a ledger .dat
 # file.
 
@@ -14,9 +15,24 @@ expected_headers = ['Date', 'Description', 'Original Description', 'Amount',
     'Transaction Type', 'Category', 'Account Name', 'Labels', 'Notes']
     
 parser = argparse.ArgumentParser()
+parser.add_argument("cat_file", help="file describing hierarchy of Mint categories")
 parser.add_argument("csv_file", help="exported transactions file from Mint")
 parser.add_argument("ledger_file", help="file to write ledger transaction list to")
 args = parser.parse_args()
+
+# Create dictionary from category to account name
+cat_dict = {}
+cat = None
+with open(args.cat_file, 'r') as lines:
+    for line in lines:
+        if line[0] == '\t':
+            line = line.strip()
+            cat_dict[line] = '{}:{}'.format(cat, line)
+        else:
+            line = line.strip()
+            parts = [s.strip() for s in line.split('-')]
+            cat = ':'.join(reversed(parts))
+            cat_dict[parts[0]] = cat
 
 with open(args.csv_file) as mint_file:
     mint_reader = csv.reader(mint_file)
@@ -27,6 +43,9 @@ headers, transactions = transactions[0], transactions[1:]
 if headers != expected_headers:
     print("ERROR: Headers in %s did not match the expected Mint transaction file headers." % filename)
 
+# Sort transactions by date
+transactions = sorted(transactions, key=lambda x: datetime.strptime(x[0], "%m/%d/%Y"))
+
 with open(args.ledger_file, 'w') as ledger_file:    
     for t in transactions:
         date = datetime.strptime(t[0], "%m/%d/%Y").strftime("%Y/%m/%d")
@@ -34,21 +53,13 @@ with open(args.ledger_file, 'w') as ledger_file:
         from_account = re.sub(' +', ' ', t[6])  # ledger hates double spaces
         balance = cashflow = t[3]
         if t[4] == 'debit': 
-            type = "Expenses"
             balance = "-%s" % balance
         else: 
-            type = "Income" 
             cashflow = "-%s" % cashflow
         category = t[5]
 
-        # Mint has a special expense category for cash withdrawals, called "Transfer for
-        # Cash Spending", which is really a transfer from Assets:<XXX> to Assets:Cash.
-        if category == "Transfer for Cash Spending":
-            type = "Assets"
-            category = "Cash"
-        
         print(dedent("""\
             %s * %s
                 Assets:%s  $ %s
-                %s:%s  $ %s
-        """ % (date, description, from_account, balance, type, category, cashflow)), file=ledger_file)
+                %s  $ %s
+        """ % (date, description, from_account, balance, cat_dict[category], cashflow)), file=ledger_file)

@@ -1,124 +1,126 @@
-Auto & Transport - Expenses
-	Auto Insurance
-	Auto Payment
-	Gas & Fuel
-	Parking
-	Public Transportation
-	Ride Share
-	Service & Parts
-Bills & Utilities - Expenses
-	Home Phone
-	Internet
-	Mobile Phone
-	Television
-	Utilities
-Business Services - Expenses
-	Advertising
-	Legal
-	Office Supplies
-	Printing
-	Shipping
-Education - Expenses
-	Books & Supplies
-	Student Loan
-	Tuition
-Entertainment - Expenses
-	Amusement
-	Arts
-	Movies & DVDs
-	Music
-	Newspapers & Magazines
-Fees & Charges - Expenses
-	ATM Fee
-	Bank Fee
-	Finance Charge
-	Late Fee
-	Service Fee
-	Trade Commissions
-Financial - Expenses
-	Financial Advisor
-	Life Insurance
-Food & Dining - Expenses
-	Alcohol & Bars
-	Coffee Shops
-	Fast Food
-	Food Delivery
-	Groceries
-	Restaurants
-Gifts & Donations - Expenses
-	Charity
-	Gift
-Health & Fitness - Expenses
-	Dentist
-	Doctor
-	Eyecare
-	Gym
-	Health Insurance
-	Pharmacy
-	Sports
-Home - Expenses
-	Furnishings
-	Home Improvement
-	Home Insurance
-	Home Services
-	Home Supplies
-	Lawn & Garden
-	Mortgage & Rent
+Assets
+  Loans
+    Loan Fees and Charges
+    Loan Insurance
+    Loan Interest
+    Loan Payment
+    Loan Principal
+  Investments
+    Buy
+    Deposit
+    Dividend & Cap Gains
+    Sell
+    Withdrawal
+  Transfer
+    Credit Card Payment
+    Transfer for Cash Spending
+Expenses
+  Auto & Transport
+    Auto Insurance
+    Auto Payment
+    Gas & Fuel
+    Parking
+    Public Transportation
+    Ride Share
+    Service & Parts
+  Bills & Utilities
+    Home Phone
+    Internet
+    Mobile Phone
+    Television
+    Utilities
+  Business Services
+    Advertising
+    Legal
+    Office Supplies
+    Printing
+    Shipping
+  Education
+    Books & Supplies
+    Student Loan
+    Tuition
+  Entertainment
+    Amusement
+    Arts
+    Movies & DVDs
+    Music
+    Newspapers & Magazines
+  Fees & Charges
+    ATM Fee
+    Bank Fee
+    Finance Charge
+    Late Fee
+    Service Fee
+    Trade Commissions
+  Financial
+    Financial Advisor
+    Life Insurance
+  Food & Dining
+    Alcohol & Bars
+    Coffee Shops
+    Fast Food
+    Food Delivery
+    Groceries
+    Restaurants
+  Gifts & Donations
+    Charity
+    Gift
+  Health & Fitness
+    Dentist
+    Doctor
+    Eyecare
+    Gym
+    Health Insurance
+    Pharmacy
+    Sports
+  Home
+    Furnishings
+    Home Improvement
+    Home Insurance
+    Home Services
+    Home Supplies
+    Lawn & Garden
+    Mortgage & Rent
+  Kids
+    Allowance
+    Baby Supplies
+    Babysitter & Daycare
+    Child Support
+    Kids Activities
+    Toys
+  Misc Expenses
+  Personal Care
+    Hair
+    Laundry
+    Spa & Massage
+  Pets
+    Pet Food & Supplies
+    Pet Grooming
+    Veterinary
+  Shopping
+    Books
+    Clothing
+    Electronics & Software
+    Hobbies
+    Sporting Goods
+  Taxes
+    Federal Tax
+    Local Tax
+    Property Tax
+    Sales Tax
+    State Tax
+  Travel
+    Air Travel
+    Hotel
+    Rental Car & Taxi
+    Vacation
+  Uncategorized
+    Cash & ATM
+    Check
 Income
-	Bonus
-	Interest Income
-	Paycheck
-	Reimbursement
-	Rental Income
-	Returned Purchase
-Investments - Assets
-	Buy
-	Deposit
-	Dividend & Cap Gains
-	Sell
-	Withdrawal
-Kids - Expenses
-	Allowance
-	Baby Supplies
-	Babysitter & Daycare
-	Child Support
-	Kids Activities
-	Toys
-Loans - Assets
-	Loan Fees and Charges
-	Loan Insurance
-	Loan Interest
-	Loan Payment
-	Loan Principal
-Misc Expenses - Expenses
-Personal Care - Expenses
-	Hair
-	Laundry
-	Spa & Massage
-Pets - Expenses
-	Pet Food & Supplies
-	Pet Grooming
-	Veterinary
-Shopping - Expenses
-	Books
-	Clothing
-	Electronics & Software
-	Hobbies
-	Sporting Goods
-Taxes - Expenses
-	Federal Tax
-	Local Tax
-	Property Tax
-	Sales Tax
-	State Tax
-Transfer - Assets
-	Credit Card Payment
-	Transfer for Cash Spending
-Travel - Expenses
-	Air Travel
-	Hotel
-	Rental Car & Taxi
-	Vacation
-Uncategorized - Expenses
-	Cash & ATM
-	Check
+  Bonus
+  Interest Income
+  Paycheck
+  Reimbursement
+  Rental Income
+  Returned Purchase

@@ -22,17 +22,28 @@ args = parser.parse_args()
 
 # Create dictionary from category to account name
 cat_dict = {}
-cat = None
+last_cat = []
 with open(args.cat_file, 'r') as lines:
     for line in lines:
-        if line[0] == '\t':
-            line = line.strip()
-            cat_dict[line] = '{}:{}'.format(cat, line)
+        # Count preceding tabs
+        num_spaces = 0
+        i = 0
+        while i < len(line) and line[i] == ' ':
+            num_spaces += 1
+            i += 1
+        
+        TAB_SIZE = 2 # Number of spaces in a tab
+        num_tabs = num_spaces // 2
+        
+        line = line.strip()
+        
+        if num_tabs < len(last_cat):
+            last_cat[num_tabs] = line
         else:
-            line = line.strip()
-            parts = [s.strip() for s in line.split('-')]
-            cat = ':'.join(reversed(parts))
-            cat_dict[parts[0]] = cat
+            last_cat.append(line)
+            assert num_tabs < len(last_cat), 'More tabs than category levels'
+        
+        cat_dict[line] = ':'.join(last_cat[:num_tabs+1])
 
 with open(args.csv_file) as mint_file:
     mint_reader = csv.reader(mint_file)

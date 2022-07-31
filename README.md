@@ -1,7 +1,7 @@
 # Usage
 
-First, download your transactions from your Mint account.
+Download transactions from Mint.
 
-Then run the script, like so:
+Run the script:
 
     ./mint-to-ledger [-h] cat_file csv_file ledger_file
